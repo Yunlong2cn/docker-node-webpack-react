@@ -10,7 +10,7 @@ module.exports = {
 		filename: '[name].bundle.js'
 	},
 	devServer: {
-		// historyApiFallback: true,
+		historyApiFallback: true,
 		inline: true,
 		hot: true
 	},
@@ -26,6 +26,12 @@ module.exports = {
 				query: {
 					presets: ['es2015', 'react', 'stage-0']
 				}
+			}, {
+				test: /\.scss/,
+				loader: 'style!css!sass',
+			}, {
+				test: /\.ttf/,
+				loader: 'url'
 			}
 		]
 	},
