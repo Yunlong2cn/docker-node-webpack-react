@@ -22,6 +22,7 @@ export default class Home extends Component {
 			<List>
 				<List.Item>Item1</List.Item>
 				<List.Item>Item2</List.Item>
+				<List.Item to="login">Login</List.Item>
 			</List>
 			<Card style={{marginTop: 10}}>
 				<List>

@@ -3,9 +3,10 @@ import classNames from 'classname'
 
 export default class Container extends Component {
 	render() {
-		const {className, children, ...others} = this.props
+		const {padded, className, children, ...others} = this.props
 		const classes = classNames({
-			'mui-content': true,
+			'mui-content': !padded,
+			'mui-content-padded': padded,
 			[className]: className
 		})
 		return <div className={classes}>{children}</div>
