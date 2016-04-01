@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import Scroll from '../scroll'
 
 export default class Inner extends Component {
 	render() {
 		const { active, fixed, title, onClick, children } = this.props
-		const translate3d = active ? fixed ? 0 : 263 : 0;
+		const translate3d = active ? fixed ? 0 : 0.7*window.innerWidth : 0;
 		return <div className="mui-inner-wrap mui-transitioning" style={{
 				transform: 'translate3d(' + translate3d + 'px, 0px, 0px)'
 			}}>

@@ -3,7 +3,6 @@ import classNames from 'classname'
 import immutable from 'immutable'
 import Aside from './aside'
 import Inner from './inner'
-// fixed 同 Aside, Inner 中的 fixed 一个概念，用于标识主界面是否固定
 
 export default class OffCanvas extends Component {
 	render() {
@@ -17,18 +16,12 @@ export default class OffCanvas extends Component {
 		})
 		return <div className={classes} {...others}>{
 			children.map((child, i) => {
-				// const a = immutable.Map(child)
-				// const b = a.update('props', active => ({active: active}))
-				// console.log('child', b)
-				// return b
-				const {children, ...others} = child.props
-				if (child.type.name == 'Aside') {
-					return <Aside active={active} fixed={fixed} {...others} key={i}>{children}</Aside>
-				}
-				if (child.type.name == 'Inner') {
-					return <Inner active={active} fixed={fixed} {...others} key={i}>{children}</Inner>
-				}
-				return child
+				return immutable.Map(child)
+				.set('props', immutable.Map(child.props)
+					.set('active', active)
+					.set('fixed', fixed)
+					.toObject()
+				).toObject()
 			})
 		}</div>
 	}

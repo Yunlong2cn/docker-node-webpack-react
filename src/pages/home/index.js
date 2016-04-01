@@ -4,16 +4,26 @@ import Button from '../../components/button'
 import List from '../../components/list'
 import Card from '../../components/card'
 import Badge from '../../components/badge'
+import {
+	Container,
+	Search
+} from '../../components'
 export default class Home extends Component {
+	static contextProps = {
+		router: React.PropTypes.object.isRequired
+	}
 	render() {
 		return <div>
-			Hello , this is home page
-			<hr/>
-			<Button>button</Button>
-			<hr/>
-			<Link to="/todo">todo</Link>
-			<hr/>
-			<Link to="/tools">tools</Link>
+			<Container padded>
+				<Search/>
+				Hello , this is home page - {this.props.route.component.name}
+				<hr/>
+				<Button>button</Button>
+				<hr/>
+				<Link to="/todo">todo</Link>
+				<hr/>
+				<Link to="/tools">tools</Link>
+			</Container>
 			<hr/>
 			<List>
 				<List.Text badge="59">text1</List.Text>

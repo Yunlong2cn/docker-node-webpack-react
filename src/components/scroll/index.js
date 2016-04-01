@@ -3,7 +3,7 @@ import classNames from 'classname'
 
 export default class Scroll extends Component {
 	render() {
-		const {children, ...others} = this.props
+		const {className, children, ...others} = this.props
 		const classes = classNames({
 			'mui-scroll-wrapper': true,
 			[className]: className

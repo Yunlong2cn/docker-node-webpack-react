@@ -24,7 +24,7 @@ render(<Provider store={store}>
 	<Router history={history}>
 		<Route path="/" component={pages.OffCanvasLayout}>
 			<IndexRoute component={pages.Home}/>
-			<Route path="/home" component={pages.Home}/>
+			<Route path="/home" name="首页" component={pages.Home}/>
 			<Route path="/todo" component={pages.Todo}/>
 			<Route path="/tools" component={pages.Tools}/>
 		</Route>

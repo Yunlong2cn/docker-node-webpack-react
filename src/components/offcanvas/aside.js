@@ -18,7 +18,7 @@ export default class Aside extends Component {
 
 		const zIndex = active ? fixed ? 9999 : 0 : -1
 		const visibility = active ? 'visible' : fixed ? 'visible' : 'hidden'
-		const translate3d = active ? 0 : fixed ? -263 : 0
+		const translate3d = active ? 0 : fixed ? -0.7*window.innerWidth : 0
 
 		return <aside className={classes} ref="aside" style={{
 				zIndex: zIndex,
