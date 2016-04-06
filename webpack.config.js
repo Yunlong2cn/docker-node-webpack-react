@@ -42,7 +42,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin(),
 		new HtmlWebpackPlugin({
-			title: 'IAPPlication',
+			title: '焦点装修',
 			template: './src/index.html',
 			inject: 'body'
 		}),

@@ -6,7 +6,8 @@ import Card from '../../components/card'
 import Badge from '../../components/badge'
 import {
 	Container,
-	Search
+	Search,
+	Slider
 } from '../../components'
 export default class Home extends Component {
 	static contextProps = {
@@ -14,6 +15,10 @@ export default class Home extends Component {
 	}
 	render() {
 		return <div>
+			<Slider>
+				<Slider.Item>12345</Slider.Item>
+				<Slider.Item>98288823</Slider.Item>
+			</Slider>
 			<Container padded>
 				<Search/>
 				Hello , this is home page - {this.props.route.component.name}

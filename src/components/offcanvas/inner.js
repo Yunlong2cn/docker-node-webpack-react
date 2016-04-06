@@ -12,7 +12,9 @@ export default class Inner extends Component {
 				<a className="mui-icon mui-action-menu mui-icon-bars mui-pull-left" onClick={onClick}></a>
 				<h1 className="mui-title">{title}</h1>
 			</header>
-			<div className="mui-content mui-scroll-wrapper">
+			<div className="mui-content mui-scroll-wrapper" style={{
+				overflowY: 'auto'
+			}}>
 				<div className="mui-scroll">{children}</div>
 			</div>
 			<div className="mui-off-canvas-backdrop" onClick={onClick}></div>

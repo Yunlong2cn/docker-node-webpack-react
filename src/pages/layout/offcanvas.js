@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import immutable from 'immutable'
 import OffCanvas from '../../components/offcanvas'
 import List from '../../components/list'
 import Button from '../../components/button'
@@ -9,7 +10,7 @@ export default class OffCanvasLayout extends Component {
 		this.state = {
 			active: props.active,
 			fixed: false,
-			title: 'Focus Websocket'
+			title: '焦点房产'
 		}
 	}
 
@@ -22,8 +23,8 @@ export default class OffCanvasLayout extends Component {
 					<Button block styleName="primary" onClick={e => this.handleClick() }>关闭</Button>
 					<Button block styleName="primary" onClick={e => this.handleFixed() }>固定主界面</Button>
 				</Container>
-				<List inverted chevron>
-					<List.Item badge={{
+				<List inverted chevron onClick={e=>this.handleClick()}>
+					<List.Item to="home" badge={{
 						style: 'primary',
 						text: '23'
 					}}>Home</List.Item>
@@ -31,7 +32,9 @@ export default class OffCanvasLayout extends Component {
 					<List.Item to="tools">Tools</List.Item>
 				</List>
 			</OffCanvas.Aside>
-			<OffCanvas.Inner title={title} onClick={e => this.handleClick() }>{children}</OffCanvas.Inner>
+			<OffCanvas.Inner title={title} onClick={e => this.handleClick() }>
+				{children}
+			</OffCanvas.Inner>
 		</OffCanvas>
 	}
 

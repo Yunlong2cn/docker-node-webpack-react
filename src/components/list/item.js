@@ -3,10 +3,14 @@ import classNames from 'classname'
 import Badge from '../badge'
 
 export default class Item extends Component {
+	static contextTypes = {
+		router: React.PropTypes.object.isRequired
+	}
 	static defaultProps = {
 		navigate: true
 	}
 	render() {
+		const {router} = this.context
 		const {to, navigate, badge, className, children, ...others} = this.props
 		const classes = classNames({
 			'mui-table-view-cell': true,
@@ -16,7 +20,7 @@ export default class Item extends Component {
 			'mui-navigate-right': navigate
 		})
 		return  <li className={classes} {...others}>
-			<a href={to} className={aClasses}>
+			<a onClick={e=>router.push(to)} className={aClasses}>
 				{children}
 				{(
 					badge => {

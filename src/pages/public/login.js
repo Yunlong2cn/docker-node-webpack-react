@@ -13,7 +13,7 @@ import {
 export default class Login extends Component {
 	render() {
 		return <Container className="login">
-			<Navbar>登录</Navbar>
+			<Navbar left right="注册">登录</Navbar>
 			<Input.Group style={{marginTop: 60}}>
 				<Input.Row label="账号" placeholder="手机号"/>
 				<Input.Row placeholder="输入密码" type="password">密码</Input.Row>
